@@ -1,6 +1,8 @@
 const initialState = {
   count: 0,
   list: [],
+  title: '',
+  html: '<p></p>',
 }
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +22,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         list: action.list,
+      }
+    case 'TITLE':
+      return {
+        ...state,
+        title: action.title,
+      }
+    case 'HTML':
+      return {
+        ...state,
+        html: action.html,
       }
     default:
       return initialState;

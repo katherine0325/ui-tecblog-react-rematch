@@ -8,6 +8,7 @@ import 'antd/dist/antd.css';
 import Increase from './components/Increase';
 import Decrease from './components/Decrease';
 import Home from './pages/Home';
+import Article from './pages/Article';
 
 let store = createStore(reducer);
 
@@ -16,6 +17,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Route exact path="/" component={Home} />
+        <Route path="/article" component={Article} />
       </Router>
     </Provider>
   );

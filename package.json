@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^3.26.18",
+    "antd": "^3.26.20",
     "axios": "^0.24.0",
     "lodash": "^4.17.21",
     "marked": "^0.3.12",

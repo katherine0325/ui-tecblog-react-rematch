@@ -12,3 +12,13 @@ export const listAction = (list) => ({
   type: 'LIST',
   list,
 })
+
+export const titleAction = (title) => ({
+  type: 'TITLE',
+  title,
+})
+
+export const htmlAction = (html) => ({
+  type: 'HTML',
+  html,
+})
