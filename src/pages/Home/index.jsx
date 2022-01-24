@@ -42,8 +42,11 @@ function Home(props) {
     // const result = await getArticleList();
     // setList(result);
     // setTimeout(loading, 0);
+
+    // const loading = message.loading('加载中...');
     const result = await getArticleList();
     props.listInit(result);
+    // setTimeout(loading, 0);
   }
 
   return (
@@ -58,12 +61,10 @@ function Home(props) {
 }
 
 const mapStateToProps = (state) => ({
-  // count: state.count,
   list: state.list,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  // incraceClick: () => dispatch(incraceAction(2)),
   listInit: (list) => dispatch(listAction(list)),
 })
 
