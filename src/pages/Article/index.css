@@ -1,0 +1,17 @@
+.article .title {
+  text-align: center;
+  line-height: 4;
+}
+
+.article .html {
+  padding: 24px;
+  padding-top: 0;
+}
+
+/* .article .html >>> img {
+  width: 100%;
+} */
+
+.article .html img {
+  max-width: 100%;
+}

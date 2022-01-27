@@ -18,6 +18,10 @@ export const titleAction = (title) => ({
   title,
 })
 
+export const resetTitleAction = () => ({
+  type: 'RESET_TITLE',
+})
+
 export const htmlAction = (html) => ({
   type: 'HTML',
   html,

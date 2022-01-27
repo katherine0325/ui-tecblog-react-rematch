@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import marked from 'marked';
+import './index.css';
 import { convertParams } from '../../lib';
 import { message } from 'antd';
 import { getArticle } from '../../api/article';
