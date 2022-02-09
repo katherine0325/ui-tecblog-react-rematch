@@ -5,10 +5,9 @@ import './index.css';
 import { convertParams } from '../../lib';
 import { message } from 'antd';
 import { getArticle } from '../../api/article';
-import { titleAction, htmlAction } from '../../redux/action';
 
 function Article(props) {
-  const { title, html, dispatchTitle, dispatchHtml } = props;
+  const { title, html, dispatchTitle, dispatchResetHtml, dispatchHtml } = props;
 
   useEffect(() => {
     const params = convertParams(props.history.location.search);
@@ -16,6 +15,7 @@ function Article(props) {
   }, [props.history.location.search]);
 
   async function init(articleNumber) {
+    dispatchResetHtml();
     const loading = message.loading('加载中...');
     const result = await getArticle(articleNumber);
     dispatchTitle(result.title);
@@ -33,13 +33,14 @@ function Article(props) {
 
 
 const mapStateToProps = (state) => ({
-  title: state.title,
-  html: state.html,
+  title: state.article.title,
+  html: state.article.html,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatchTitle: (title) => dispatch(titleAction(title)),
-  dispatchHtml: (html) => dispatch(htmlAction(html)),
+  dispatchTitle: (title) => dispatch.defaultLayout.setTitle(title),
+  dispatchResetHtml: dispatch.article.resetHtml,
+  dispatchHtml: (html) => dispatch.article.setHtml(html),
 })
 
 const Page = connect(

@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ArticleLine from '../../components/ArticleLine';
 import { getArticleList } from '../../api/home';
-import { listAction, resetTitleAction } from '../../redux/action';
 import { message } from 'antd';
 import './index.css';
 
@@ -38,12 +37,12 @@ function Home(props) {
 }
 
 const mapStateToProps = (state) => ({
-  list: state.list,
+  list: state.home.list,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  dispatchTitle: () => dispatch(resetTitleAction()),
-  dispatchList: (list) => dispatch(listAction(list)),
+  dispatchTitle: dispatch.defaultLayout.resetTitle,
+  dispatchList: (list) => dispatch.home.getList(list),
 })
 
 const Page = connect(
